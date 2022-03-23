@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal</title>
-    <script src="//unpkg.com/alpinejs" defer></script>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Modal</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
+        <script src="https://kit.fontawesome.com/373a35906b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./dropdown.css"></head>
+    <body class="bg-gray-400">
+        <div class="container mx-auto px-4 xl:px-64 mt-12 mb-12">
+            <h2 class="text-2xl font-bold">Modal</h2>
+
+            <div>
+                <button class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded">
+                    Open Modal
+                </button>
+            </div>
+
+            <div
+                style="background-color: rgba(0, 0, 0, .5)"
+                class="mx-auto absolute top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
+                <div class="container mx-auto rounded p-4 mt-2 overflow-y-auto">
+                    <div class="bg-white rounded px-8 py-8">
+                        <h1 class="font-bold text-2xl mb-3">Modal Title</h1>
+                        <div class="modal-body">
+                            <p>Lorem ipsum dolar sit amet, consectetur adipisicing elit. Porro amet repellat recusandae.</p>
+                        </div>
+                        <div class="mt-4">
+                            <button class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded">
+                                Close Modal
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
