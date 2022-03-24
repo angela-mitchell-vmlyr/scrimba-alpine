@@ -4,33 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://kit.fontawesome.com/373a35906b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./tabs.css">
 </head>
 <body class="text-gray-800 bg-gray-200">
-    <div class="container mx-auto p-4 mb-4">
+    <div class="container mx-auto p-4 mb-4" x-data="{ tab: 'tab1' }">
         <h2 class="text-2xl font-bold">Tabs</h2>
-        <ul class="flex border-b mt-6">
+        <ul class="flex border-b mt-6 mb-0">
             <li class="mb-px mr-1">
-                <a href="#" class="inline-block rounded-t py-2 px-4 font-semibold hover:text-blue-800 bg-white text-blue-700 border-l border-t border-r">
-                    Tab 1
+                <a 
+                    href="#"
+                    class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                    :class="{'rounded-t bg-white text-blue-700 border-l border-t border-r' : tab === 'tab1'}"
+                    @click.prevent="tab = 'tab1'">
+                        Tab 1
                 </a>
             </li>
             <li class="mb-px mr-1">
-                <a href="#" class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold">
-                    Tab 2
+                <a 
+                    href="#"
+                    class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                    :class="{'rounded-t bg-white text-blue-700 border-l border-t border-r' : tab === 'tab2'}"
+                    @click.prevent="tab = 'tab2'">
+                        Tab 2
                 </a>
             </li>
             <li class="mb-px mr-1">
-                <a href="#" class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold">
-                    Tab 3
+                <a
+                    href="#"
+                    class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                    :class="{'rounded-t bg-white text-blue-700 border-l border-t border-r' : tab === 'tab3'}"
+                    @click.prevent="tab = 'tab3'">
+                        Tab 3
                 </a>
             </li>
         </ul>
         <div class="content bg-white px-4 py-4 border-l border-r border-b pt-4">
-
+            <div x-show="tab === 'tab1'">
+                <p>Tab1 content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper. Vel facilisis volutpat est velit egestas.</p>
+            </div>
+            <div x-show="tab === 'tab2'">
+                <p>Tab2 content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper. Vel facilisis volutpat est velit egestas.</p>
+            </div>
+            <div x-show="tab === 'tab3'">
+                <p>Tab3 content. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan tortor posuere ac ut consequat semper. Vel facilisis volutpat est velit egestas.</p>
+            </div>
         </div>
     </div>
 </body>
