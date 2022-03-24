@@ -16,8 +16,9 @@
             <div x-data="{ isOpen: false }">
                 <button
                     class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded"
-                    @click="isOpen = true">
-                    Open Modal
+                    @click="isOpen = true 
+                    $nextTick(() => { $refs.modalCloseButton.focus(); })">
+                        Open Modal
                 </button>
                 <div
                     style="background-color: rgba(0, 0, 0, .5)"
@@ -31,9 +32,10 @@
                             </div>
                             <div class="mt-4">
                                 <button
-                                    class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded"
-                                    @click="isOpen = false">
-                                    Close Modal
+                                    class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded focus:border-solid focus:border-4 focus:border-blue-200"
+                                    @click="isOpen = false"
+                                    x-ref="modalCloseButton">
+                                        Close Modal
                                 </button>
                             </div>
                         </div>
