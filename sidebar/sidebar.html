@@ -5,12 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://kit.fontawesome.com/373a35906b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./dropdown.css">
 </head>
-<body>
-    <div x-data="{ isOpen: false }">
-        <button @click="isOpen = !isOpen">Toggle</button>
-        <h1 x-show="isOpen">index.html</h1>
-    </div>
+<body class="bg-gray-300 text-gray-800">
+    <header class="border-t-4 border-blue-700 bg-white shadow-md">
+        <nav class="container mx-auto px-4 flex items-center justify-between py-4">
+            <div class="flex">
+                <button>
+
+                </button>
+            </div>
+            <div class="absolute top-0 left-0 bg-white border border-right h-full w-48 hiddenf">
+                <div class="flex justify-end">
+                    <button class="text-2xl mr-3 mt-1">&times;</button>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                            Account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 </body>
 </html>
